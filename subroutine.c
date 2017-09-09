@@ -22,10 +22,9 @@ void main_routine(void)
 	start_sensor_calibration();
 	MOTOR_WAKE_UP();
 
-
-	while (1) {
-		
-	}
+	linetrace(1);
+	
+	MOTOR_SLEEP();
 }
 
 void go_object_zone_from_start_zone(void)

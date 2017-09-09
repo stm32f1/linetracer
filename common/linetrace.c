@@ -11,6 +11,8 @@
 static bool judge_cross(void);
 static bool judge_goal(void);
 
+unsigned int corner_count = 0;
+
 void linetrace(int cycle)
 {
 	int32_t control_input = 0;
@@ -31,12 +33,9 @@ void linetrace(int cycle)
 	MOTOR_R_ENABLE();
 	MOTOR_L_ENABLE();
 
-	while (cycle -= judge_cross()) {
+	while (1) {
 		if (!(goal_detection -= judge_goal())) break;
-		if (judge_cross()) {
-			motor_operation = 0;
-			pipipi(1);
-		}
+		if (judge_cross());
 
 		control_input = (signed int) (fix_sensors_value + (sensor_val[0]*5 + sensor_val[1]*3
 				+ sensor_val[2] - sensor_val[3] - sensor_val[4]*3 - sensor_val[5]*5));
@@ -107,7 +106,7 @@ static bool judge_cross(void)
 static bool judge_goal(void)
 {
 	xbee_printf("CROSS LINE!!\r\n");
-	const uint16_t goal_threshold = 800;
+	const uint16_t sensor_threshold = 800;
 
 	/*
 	static unsigned int cycle_count = 0;
@@ -118,11 +117,37 @@ static bool judge_goal(void)
 	if (sum_u16(sensor_buff, 5) / 5 > goal_threshold) return true;
 	 */
 
-	if ((sensor_val[GOAL_MARKER] - fix_sensor_val[GOAL_MARKER]) > goal_threshold) {
+	if ((sensor_val[GOAL_MARKER] - fix_sensor_val[GOAL_MARKER]) > sensor_threshold) {
 		pipipi(1);
 		return true;
 	}
 	return false;
+}
+
+static bool judge_corner(void)
+{
+	xbee_printf("CROSS LINE!!\r\n");
+	const uint16_t sensor_threshold = 800;
+
+	/*
+	static unsigned int cycle_count = 0;
+	static unsigned int sensor_buff[5] = {0};
+
+	sensor_buff[cycle_count++] = (unsigned int)(sensor_val[GOAL_MARKER] - fix_sensor_val[GOAL_MARKER]);
+	if (cycle_count == 5) cycle_count = 0;
+	if (sum_u16(sensor_buff, 5) / 5 > goal_threshold) return true;
+	 */
+
+	if ((sensor_val[CORNER_MARKER] - fix_sensor_val[CORNER_MARKER]) > sensor_threshold) {
+		corner_count;
+		pipipi(1);
+		return true;
+	}
+	return false;
+}
+
+void calc_curvature(unsigned int corner_count)
+{
 }
 
 void linetrace_to_crossline(int cycle, unsigned int distance)
