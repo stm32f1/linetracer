@@ -1,0 +1,75 @@
+#ifndef WATERCROWN_H
+#define	WATERCROWN_H
+
+music water_crown = {117, 64,
+{
+	{C, 8, SIXTEENTH_NOTE},
+	{G, 4, SIXTEENTH_NOTE},
+	{C, 8, SIXTEENTH_NOTE},
+	{E, 8, SIXTEENTH_NOTE},
+	{A, 8, EIGHTH_NOTE},//s
+	{G, 8, EIGHTH_NOTE},
+	{REST, 8, EIGHTH_NOTE},
+	{C, 16, SIXTEENTH_NOTE},
+	{B, 8, SIXTEENTH_NOTE},
+	{A, 8, SIXTEENTH_NOTE},
+	{G, 8, SIXTEENTH_NOTE},
+	{F, 8, SIXTEENTH_NOTE},
+	{D, 8, SIXTEENTH_NOTE},
+
+	{C, 8, SIXTEENTH_NOTE},
+	{G, 4, SIXTEENTH_NOTE},
+	{C, 8, SIXTEENTH_NOTE},
+	{E, 8, SIXTEENTH_NOTE},
+	{A, 8, EIGHTH_NOTE},//s
+	{G, 8, EIGHTH_NOTE},
+	{REST, 8, EIGHTH_NOTE},
+	{C, 16, SIXTEENTH_NOTE},
+	{B, 8, SIXTEENTH_NOTE},
+	{A, 8, SIXTEENTH_NOTE},
+	{G, 8, SIXTEENTH_NOTE},
+	{F, 8, SIXTEENTH_NOTE},
+	{D, 8, SIXTEENTH_NOTE},
+	
+	{C, 8, SIXTEENTH_NOTE},
+	{G, 4, SIXTEENTH_NOTE},
+	{C, 8, SIXTEENTH_NOTE},
+	{E, 8, SIXTEENTH_NOTE},
+	{A, 8, EIGHTH_NOTE},//s
+	{G, 8, EIGHTH_NOTE},
+	{D, 8, SIXTEENTH_NOTE},
+	{F, 8, SIXTEENTH_NOTE},
+	{A, 8, SIXTEENTH_NOTE},
+	{C, 16, SIXTEENTH_NOTE},
+	{B, 8, SIXTEENTH_NOTE},
+	{G, 8, SIXTEENTH_NOTE},
+	{B, 8, SIXTEENTH_NOTE},
+	{D, 16, SIXTEENTH_NOTE},
+	
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2},
+	{A, 8, 2},
+	{C_, 16, 2}
+}
+};
+#endif	/* WATERCROWN_H */
